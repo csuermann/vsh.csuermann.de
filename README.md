@@ -22,9 +22,10 @@ This is the landing page for Virtual Smart Home, a smart home management SaaS pl
 1. Create a new repository on GitHub
 2. Push these files to your repository
 3. Go to repository Settings > Pages
-4. Under "Source", select "main" branch
-5. Click "Save"
-6. Your site will be published at `https://[your-username].github.io/[repository-name]`
+4. Under "Build and deployment":
+   - Source: Select "GitHub Actions"
+5. The site will automatically deploy when you push to the main branch
+6. Your site will be published at `https://csuermann.github.io/vsh.csuermann.de`
 
 ## Custom Domain Setup
 
