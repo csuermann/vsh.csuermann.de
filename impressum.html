@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Virtual Smart Home</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .impressum-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: var(--background);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .impressum-content h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .impressum-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .impressum-content h2::after {
+            display: none;
+        }
+
+        .impressum-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .impressum-content .address {
+            margin-bottom: 2rem;
+            width: 25%;
+        }
+
+        .impressum-content .address img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .impressum-content .note {
+            background: linear-gradient(145deg, var(--light-background), #ffffff);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .impressum-content {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Virtual Smart Home Logo" class="logo-img">
+                <span>Virtual Smart Home</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="getting-started.html" class="cta-button">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Impressum</h1>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="impressum-content">
+                <h2>Angaben gemäß § 5 TMG</h2>
+                <div class="address">
+                    <img src="imprint-address.png" alt="Address information">
+                </div>
+
+                <h2>Kontakt</h2>
+                <p>E-Mail: vsh@csuermann.de</p>
+                <p>Steuernummer: 24/552/01419</p>
+
+                <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+                <div class="address">
+                    <img src="imprint-address.png" alt="Address information">
+                </div>
+
+                <h2>Haftungsausschluss</h2>
+                <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.<br>
+                Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Virtual Smart Home</h4>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="impressum.html">Impressum (DE)</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/in/csuermann/">LinkedIn</a>
+                <a href="https://github.com/csuermann/node-red-contrib-virtual-smart-home">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Virtual Smart Home. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
