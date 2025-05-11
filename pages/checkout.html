@@ -1,0 +1,129 @@
+---
+layout: default
+title: Checkout
+---
+
+<div class="checkout-container">
+
+  <div id="paddle-checkout">
+    <h1 id="product-name"></h1>
+  </div>
+
+  <div id="error-message" class="error-message" style="display: none;">
+    <p>Invalid checkout session. Please inititate the checkout from Node-RED.</p>
+  </div>
+</div>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script type="text/javascript">
+  // Check for checkoutIntend parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const checkoutIntendParam = urlParams.get('checkoutIntend');
+
+  let checkoutIntend = null;
+  if (checkoutIntendParam) {
+    try {
+      const decodedString = atob(checkoutIntendParam);
+      checkoutIntend = JSON.parse(decodedString);
+      console.log('Decoded checkout intend:', checkoutIntend);
+    } catch (error) {
+      console.error('Error decoding checkout intend:', error);
+      checkoutIntend = null;
+    }
+  }
+
+  // Initialize Paddle only if checkoutIntend is present and valid
+  if (!checkoutIntend) {
+    // Show error message and hide checkout
+    document.getElementById('paddle-checkout').style.display = 'none';
+    document.getElementById('error-message').style.display = 'block';
+  } else {
+    document.getElementById('product-name').textContent = checkoutIntend.productName;
+
+    if (checkoutIntend.sandbox) {
+      Paddle.Environment.set("sandbox");
+    }
+
+    Paddle.Initialize({
+      token: checkoutIntend.sandbox ? 'test_c3d5613988ecefbfeaca7fd2d9e' : 'live_35e8b8285ef8a6bb5f71a97269b', // client-side token
+      pwCustomer: {},
+      checkout: {
+        settings: {
+          displayMode: "inline",
+          frameTarget: "checkout-container",
+          frameInitialHeight: "450",
+          frameStyle: "width: 100%; min-width: 312px; background-color: transparent; border: none;",
+          variant: "one-page",
+          allowLogout: false,
+          showAddTaxId: false,
+          successUrl: "https://vsh.csuermann.de/checkout-success/",
+        }
+      }
+    });
+    Paddle.Checkout.open({
+      customer: {
+        email: checkoutIntend.email,
+      },
+      items: [
+        {
+          priceId: checkoutIntend.priceId,
+          quantity: 1
+        }
+      ],
+      customData: {
+        "userId": checkoutIntend.userId,
+        "jwt": checkoutIntend.jwt
+      }
+    });
+  }
+</script>
+
+<style>
+  .checkout-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 4rem;
+  }
+
+  #product-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1rem 0;
+  }
+
+  .error-message {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    margin: 2rem auto;
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #34495e;
+  }
+</style>

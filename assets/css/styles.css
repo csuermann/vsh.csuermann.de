@@ -76,7 +76,7 @@ nav {
 .hero {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 8rem 2rem 4rem;
+    padding: 8rem 2rem 3rem;
     text-align: center;
 }
 
@@ -157,7 +157,7 @@ nav {
 }
 
 .pricing-card {
-    background: var(--background);
+    background: var(--light-background);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -269,7 +269,7 @@ footer {
 .cta-button {
     display: inline-block;
     background: var(--primary-color);
-    color: white;
+    color: white !important;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     text-decoration: none;

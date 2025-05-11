@@ -1,0 +1,14 @@
+{
+  "name": "vsh.csuermann.de",
+  "version": "1.0.0",
+  "description": "This is the website for Virtual Smart Home, built with Jekyll and hosted on GitHub Pages.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bundle exec jekyll serve"
+  },
+  "author": "",
+  "license": "ISC"
+}

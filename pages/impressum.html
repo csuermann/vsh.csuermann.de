@@ -1,0 +1,105 @@
+---
+layout: default
+title: Impressum
+---
+
+<style>
+    .impressum-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: var(--background);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .impressum-content h2 {
+        color: var(--primary-color);
+        margin: 2rem 0 1.5rem;
+        font-size: 1.8rem;
+        text-align: left;
+    }
+
+    .impressum-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .impressum-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: var(--text-color);
+        text-align: left;
+    }
+
+    .impressum-content ul,
+    .impressum-content ol {
+        list-style-type: disc;
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .impressum-content li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        text-align: left;
+    }
+
+    .impressum-content .last-updated {
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+        text-align: left;
+    }
+
+    .impressum-content .address {
+        margin: 2rem 0;
+        width: 25%;
+    }
+
+    .impressum-content .address img {
+        width: 90%;
+        height: auto;
+    }
+</style>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Impressum</h1>
+    </div>
+</section>
+
+<section class="features">
+    <div class="impressum-content">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <div class="address">
+            <img src="{{ '/assets/images/imprint-address.png' | relative_url }}" alt="Address information">
+        </div>
+
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a href="#" onclick="this.href='mailto:'+atob('dnNoQGNzdWVybWFubi5kZQ==')" target="_blank"
+                rel="noopener" id="email-link">[E-Mail-Adresse]</a></p>
+        <p>Steuernummer: 24/552/01419, umsatzsteuerbefreit gem. § 19 Abs. 1 UStG</p>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('email-link').textContent = atob('dnNoQGNzdWVybWFubi5kZQ==');
+            });
+        </script>
+
+        <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+        <div class="address">
+            <img src="{{ '/assets/images/imprint-address.png' | relative_url }}" alt="Address information">
+        </div>
+
+        <h2>Haftungsausschluss</h2>
+        <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.<br>
+            Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+
+        <p class="last-updated">Last updated: May 10, 2025</p>
+    </div>
+</section>

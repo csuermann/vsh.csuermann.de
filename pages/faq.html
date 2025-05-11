@@ -1,0 +1,235 @@
+---
+layout: default
+title: Frequently Asked Questions
+---
+
+<style>
+  .faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+
+  .faq-content h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .faq-content h2 {
+    color: var(--primary-color);
+    margin: 2rem 0 1.5rem;
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .faq-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .faq-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: left;
+  }
+
+  .faq-content ul,
+  .faq-content ol {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .faq-content li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: left;
+  }
+
+  .faq-content .last-updated {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: left;
+  }
+
+  .faq-content pre {
+    background: var(--light-background);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .faq-content code {
+    font-family: monospace;
+    background: var(--light-background);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+
+  .faq-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  .faq-content a:hover {
+    color: var(--primary-color-dark);
+  }
+</style>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</section>
+
+<section class="features">
+  <div class="faq-content">
+    <div class="faq-item">
+      <h2>Which voice commands can I use to control my devices with Alexa?</h2>
+      <div class="faq-answer">
+        <p>Take a look at the <a
+            href="https://github.com/csuermann/node-red-contrib-virtual-smart-home/tree/master/examples">example
+            flows</a> which you can import from the Node-RED import menu (Import > Examples >
+          node-red-contrib-virtual-smart-home).</p>
+        <p>Here are some of the most often used commands:</p>
+        <ul>
+          <li>Alexa, switch on / off DEVICE-NAME</li>
+          <li>Alexa, set DEVICE-NAME to X percent</li>
+          <li>Alexa, set DEVICE-NAME to Warm white / Soft white / Daylight white / Cool white / Red / Crimson / Salmon /
+            Orange / Gold / Yellow / Green / Turquoise / Cyan / Sky blue / Blue / Purple / Magenta / Pink / Lavender
+          </li>
+          <li>Alexa, open / close DEVICE-NAME</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>How can I control devices in a specific room?</h2>
+      <div class="faq-answer">
+        <p>You can create rooms in the Alexa app and assign your devices to them. Create a room which groups together an
+          Alexa device (e.g. Echo) and some virtual lights. You can then control all those lights simply by speaking
+          "Alexa, switch off the light" into the Alexa device.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Why do my devices suddenly fail to connect and show up as 'offline'?</h2>
+      <div class="faq-answer">
+        <p>If your device was not connected to the VSH backend for more than 30 days its certificate will be revoked.
+          You can fix that by deleting the old connection, creating a new one and linking your virtual devices to the
+          new one. All your devices should then get re-discovered by Alexa.</p>
+        <p>Another reason could be that you are using an outdated version of VSH. Please update to the latest version
+          (e.g using the Node-RED palette manager).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Why do some of my devices show up as duplicates in the Alexa app?</h2>
+      <div class="faq-answer">
+        <p>Your duplicate devices might belong to a vsh-connection that no longer exists. You can delete them manually
+          on the connection page where they probably show up with a shaded background, indicating they belong to another
+          vsh-connection.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>I deleted a virtual device but Alexa keeps rediscovering it!</h2>
+      <div class="faq-answer">
+        <p>You probably deleted the device in the Alexa app instead of Node-RED. Open the connection page which lists
+          all known devices and click the trash icon next to the device you want to delete.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Why does VSH not work offline?</h2>
+      <div class="faq-answer">
+        <p>Alexa lives in the cloud. When you ask Alexa to control one of your devices, your voice is sent to Amazon
+          servers for processing. Amazon's servers then try to make sense of what you said and which skill to invoke. If
+          you said "Alexa, dim the kitchen light to fifty percent!", Alexa will realize that 'kitchen light' belongs to
+          the VSH skill and invoke the VSH backend with a 'directive' containing the command that was understood (e.g.
+          'SetBrightness'). The VSH skill backend then sends a message to your connected virtual device which triggers
+          an outgoing msg object with the device state for you to make use of. This requires your VSH devices to be
+          online.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>What do you do with my data?</h2>
+      <div class="faq-answer">
+        <p>The VSH backend only stores metadata about your configured devices needed for VSH to function and your basic
+          profile information provided by Amazon when you enabled the skill. Neither your Amazon password nor your voice
+          prompts or your location is ever shared with VSH. We do not analzye your usage patterns and do not run
+          marketing campaigns.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Where can I see what data is being sent to / received from the backend?</h2>
+      <div class="faq-answer">
+        <p>Activate the <code>Debug</code> option on the connection page and observe the output logged to stdout.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Is there a way to persist the state of devices across restarts of Node-RED?</h2>
+      <div class="faq-answer">
+        <p>Yes! The device state is stored as 'context' provided by Node-RED, which is kept in memory by default. You
+          can easily change that by adding this snippet to your Node-RED's settings.js file:</p>
+        <pre><code>contextStorage: {
+    default: {
+        module: "localfilesystem",
+    },
+},</code></pre>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>In which way is the FREE plan limited?</h2>
+      <div class="faq-answer">
+        <p>While you can use the FREE plan free of charge for as long as you want, it is currently limited to 7 virtual
+          devices and doesn't support retrieving device state by Alexa, e.g. commands like "Alexa, what's the
+          temperature in the living room" will fail.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Where can I manage my VSH subscription?</h2>
+      <div class="faq-answer">
+        <p>Click the 'manage subscription' button on the vsh-connection page in Node-RED. This option will only be shown
+          when you already have purchased a subscription.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Can you add feature X, please?</h2>
+      <div class="faq-answer">
+        <p>I'm always eager to hear your ideas! Please <a
+            href="https://github.com/csuermann/node-red-contrib-virtual-smart-home/issues/new">file a ticket</a>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <h2>Where can I ask a question that hasn't been addressed yet?</h2>
+      <div class="faq-answer">
+        <p>Check out <a href="https://github.com/csuermann/node-red-contrib-virtual-smart-home/issues">existing
+            issues</a> on GitHub or <a
+            href="https://github.com/csuermann/node-red-contrib-virtual-smart-home/issues/new">file a new ticket</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

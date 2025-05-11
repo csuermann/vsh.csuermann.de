@@ -1,0 +1,319 @@
+---
+layout: default
+title: Getting Started
+---
+
+<style>
+    .getting-started-content {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem;
+        background: var(--background);
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .getting-started-content h2 {
+        color: var(--primary-color);
+        margin: 3rem 0 1.5rem;
+        font-size: 2rem;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 0.5rem;
+        text-align: left;
+    }
+
+    .getting-started-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .getting-started-content h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 2px;
+    }
+
+    .getting-started-content h3 {
+        color: var(--text-color);
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        text-align: left;
+    }
+
+    .getting-started-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: var(--text-color);
+        font-size: 1.1rem;
+    }
+
+    .getting-started-content ul {
+        list-style-type: none;
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .getting-started-content li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .getting-started-content li::before {
+        content: '•';
+        color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .getting-started-content .highlights {
+        background: linear-gradient(145deg, var(--light-background), #ffffff);
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 3rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-color);
+    }
+
+    .getting-started-content .highlights h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+    }
+
+    .getting-started-content .highlights ul {
+        columns: 1;
+        column-gap: 3rem;
+    }
+
+    .getting-started-content .highlights li {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+    }
+
+    .getting-started-content .highlights li ul {
+        margin-top: 0.5rem;
+        margin-left: 1.5rem;
+    }
+
+    .getting-started-content .highlights li ul li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        color: var(--light-text);
+    }
+
+    .getting-started-content .availability {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    .getting-started-content .availability a {
+        color: var(--primary-color);
+        text-decoration: none;
+        padding: 0.75rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .getting-started-content .availability a:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .getting-started-content .setup-steps {
+        counter-reset: step;
+        margin: 2rem 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .getting-started-content .setup-steps li {
+        position: relative;
+        padding: 1.5rem 1.5rem 1.5rem 4rem;
+        margin-bottom: 1.5rem;
+        background: var(--light-background);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+    }
+
+    .getting-started-content .setup-steps li::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .getting-started-content pre {
+        background: var(--light-background);
+        padding: 1.5rem;
+        border-radius: 12px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border: 1px solid var(--border-color);
+    }
+
+    .getting-started-content code {
+        font-family: 'Fira Code', monospace;
+        font-size: 0.95rem;
+        color: var(--text-color);
+    }
+
+    .getting-started-content .demo-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin: 2rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .getting-started-content {
+            padding: 2rem;
+            margin: 0 1rem;
+        }
+
+        .getting-started-content .highlights ul {
+            columns: 1;
+        }
+
+        .getting-started-content .setup-steps li {
+            padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+        }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Getting Started</h1>
+    </div>
+</section>
+
+<section class="features">
+    <div class="getting-started-content">
+        <h2>Virtual Smart Home (VSH)</h2>
+        <p>A Node-RED node that represents a virtual smart home device which can be controlled via Amazon Alexa. Requires the 'virtual smart home' skill to be enabled for your Amazon account.</p>
+
+        <img src="{{ '/assets/images/demo.png' | relative_url }}" alt="Examples" class="demo-image">
+
+        <div class="highlights">
+            <h3>Highlights</h3>
+            <ul>
+                <li>supports a growing set of device types
+                    <ul>
+                        <li>Blinds</li>
+                        <li>Color Changing Light Bulb</li>
+                        <li>Contact Sensor</li>
+                        <li>Dimmable Light Bulb</li>
+                        <li>Dimmer Switch</li>
+                        <li>Doorbell Event Source</li>
+                        <li>Entertainment Device</li>
+                        <li>Fan</li>
+                        <li>Garage Door Opener (en-US locale only)</li>
+                        <li>Lock</li>
+                        <li>Motion Sensor</li>
+                        <li>Plug</li>
+                        <li>Scene</li>
+                        <li>Switch</li>
+                        <li>Temperature Sensor</li>
+                        <li>Thermostat (Single-setpoint)</li>
+                        <li>Thermostat (Dual-setpoint)</li>
+                    </ul>
+                </li>
+                <li>no separate account needed. Just link your existing Amazon account.</li>
+                <li>new virtual devices can simply be dragged onto the Node-RED canvas and will proactively be discovered by Alexa. No need to ask Alexa to discover devices.</li>
+                <li>devices removed from the Node-RED canvas will also be removed from Alexa. Orphaned devices can also be manually removed from Alexa via the Node-RED editor.</li>
+                <li>changes made to virtual device types and names will immediately be picked up by Alexa.</li>
+                <li>local state changes of devices (e.g. thermostat values) get synchronized with Alexa</li>
+                <li>secure communication with the IoT cloud through individually provisioned certificates</li>
+            </ul>
+        </div>
+
+        <h2>What it does</h2>
+        <p>This node is triggered by Amazon Alexa, either through a voice command or the Alexa app, resulting in the generation of a <code>msg</code> object that carries the updated device state as its payload. This msg can be harnessed to perform practical actions, such as controlling physical devices connected to Home Assistant. For instance, if you say, "Alexa, dim the kitchen light to 50 percent," the emitted <code>msg</code> object would be as follows:</p>
+
+        <pre><code>{
+  "topic": "home/kitchen/lights",
+  "metadata": { "foo": "bar"},
+  "payload": {
+    "brightness": 50,
+    "powerState": "ON",
+    "source": "alexa",
+    "directive": "SetBrightness",
+    "name": "kitchen light",
+    "type": "DIMMABLE_LIGHT_BULB"
+  }
+}</code></pre>
+
+        <p>The node also accepts inbound messages that can be used to inform Alexa about local device changes, which will then be reflected in the Alexa app. If the passthrough option is enabled, this will also trigger an outbound message, just like when the node gets invoked via Alexa. In this case <code>payload.source</code> is set to <code>device</code> instead of <code>alexa</code>. If the inbound message has a <code>topic</code> attribute, its value will be present in the outbound msg instead of the topic configured in the editor.</p>
+
+        <p>Please ensure that your setup does not send too many messages to Alexa. Otherwise you risk getting your account blocked.</p>
+
+        <h2>Availability</h2>
+        <p>The virtual smart home skill is available in the <b>Amazon Alexa skill stores</b>     in the following locales:</p>
+
+        <div class="availability">
+            <a href="https://www.amazon.com.au/dp/B08JV9RT7H">English (AU)</a>
+            <a href="https://www.amazon.ca/dp/B08JV9RT7H">English (CA)</a>
+            <a href="https://www.amazon.co.uk/dp/B08JV9RT7H">English (GB)</a>
+            <a href="https://www.amazon.in/dp/B08JV9RT7H">English (IN)</a>
+            <a href="https://www.amazon.com/dp/B08JV9RT7H">English (US)</a>
+            <a href="https://www.amazon.fr/dp/B08JV9RT7H">French (FR)</a>
+            <a href="https://www.amazon.de/dp/B08JV9RT7H">German (DE)</a>
+            <a href="https://www.amazon.it/dp/B08JV9RT7H">Italian (IT)</a>
+            <a href="https://www.amazon.com.br/dp/B08JV9RT7H">Portuguese (BR)</a>
+            <a href="https://www.amazon.es/dp/B08JV9RT7H">Spanish (ES)</a>
+        </div>
+
+        <h2>Setup Instructions</h2>
+
+        <h3>In the Alexa app</h3>
+        <ol class="setup-steps">
+            <li>Search the skill store for the <code>virtual smart home</code> skill and enable it.</li>
+            <li>Complete the account linking process by logging in with your Amazon account credentials.</li>
+        </ol>
+
+        <h3>In Node-RED</h3>
+        <ol class="setup-steps">
+            <li>Install the <code>node-red-contrib-virtual-smart-home</code> module.</li>
+            <li>Place a <code>virtual device</code> node onto the canvas and connect it to a debug node.</li>
+            <li>Double-click on the virtual device node to enter a name and select a device type. Once set up, you can use this name to control the device via Alexa.</li>
+            <li>Configure a new <code>vsh-connection</code> by clicking the pen icon. (Only needed <em>once</em> for each Amazon account).</li>
+            <li>Follow the instructions to complete the account linking process. Make sure you use the same Amazon account credentials as above.</li>
+            <li>Deploy your Node-RED flow. This will trigger your virtual device to be discovered by Alexa. You should even get a push notification via the Alexa app (if notifications are enabled).</li>
+            <li>You should now be able to control your virtual device with your voice, e.g., by saying "Alexa, turn xxx on". Inspect the output of the connected debug node and consult the docs to do something useful.</li>
+            <li>Once you remove virtual devices from the canvas (and redeploy your flows), those devices will also be removed from Alexa.</li>
+        </ol>
+
+        <h2>Docs</h2>
+        <p>Detailed docs are shipped as part of the Node-RED package and available through the 'help' panel.</p>
+    </div>
+</section> 

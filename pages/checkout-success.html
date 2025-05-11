@@ -1,0 +1,166 @@
+---
+layout: default
+title: Thank You for Your Purchase
+---
+
+<div class="success-container">
+  <div class="success-content">
+    <div class="success-icon">✓</div>
+    <h1>Thank You for Subscribing!</h1>
+    <p class="success-message">We have enabled the PRO plan for your account. Here are your next steps:</p>
+
+    <div class="next-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Go back to Node-RED</h3>
+          <p>Place a virtual-device node in your flow and open it's edit view.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Check your account status</h3>
+          <p>You will see the PRO plan being enabled.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Benefit</h3>
+          <p>You can now use the PRO features of Virtual Smart Home. Enjoy!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <a href="/getting-started" class="cta-button">View Getting Started Guide</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .success-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .success-content {
+    text-align: center;
+  }
+
+  .success-icon {
+    font-size: 4rem;
+    color: #10B981;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+  }
+
+  .success-message {
+    font-size: 1.2rem;
+    color: #4B5563;
+    margin-bottom: 2rem;
+  }
+
+  .next-steps {
+    margin: 3rem 0;
+    text-align: left;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    background: var(--light-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    position: relative;
+  }
+
+  .step-number {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-content {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  .step-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .primary-button {
+    background-color: #2c3e50;
+    color: white;
+  }
+
+  .primary-button:hover {
+    background-color: #34495e;
+  }
+
+  .secondary-button {
+    background-color: #E5E7EB;
+    color: #4B5563;
+  }
+
+  .secondary-button:hover {
+    background-color: #D1D5DB;
+  }
+
+  @media (max-width: 640px) {
+    .action-buttons {
+      flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

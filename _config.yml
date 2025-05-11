@@ -1,0 +1,21 @@
+title: Virtual Smart Home
+description: Do stuff in Node-RED with Alexa
+baseurl: ""
+url: "https://vsh.csuermann.de"
+
+# Build settings
+markdown: kramdown
+
+# Include pages directory
+include: ["pages"]
+
+# Default front matter
+defaults:
+  - scope:
+      path: "pages"
+    values:
+      layout: "default"
+      permalink: /:basename/
+
+# Permalink structure
+permalink: /:basename/ 
