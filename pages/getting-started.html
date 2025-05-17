@@ -16,7 +16,7 @@ title: Getting Started
 
     .getting-started-content h2 {
         color: var(--primary-color);
-        margin: 3rem 0 1.5rem;
+        margin: 3rem 0 0.5rem;
         font-size: 2rem;
         font-weight: 700;
         position: relative;
@@ -26,17 +26,6 @@ title: Getting Started
 
     .getting-started-content h2:first-child {
         margin-top: 0;
-    }
-
-    .getting-started-content h2::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 4px;
-        background: var(--primary-color);
-        border-radius: 2px;
     }
 
     .getting-started-content h3 {
@@ -144,7 +133,7 @@ title: Getting Started
 
     .getting-started-content .setup-steps li {
         position: relative;
-        padding: 1.5rem 1.5rem 1.5rem 4rem;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
         margin-bottom: 1.5rem;
         background: var(--light-background);
         border-radius: 12px;
@@ -155,9 +144,8 @@ title: Getting Started
         counter-increment: step;
         content: counter(step);
         position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        left: -1rem;
+        top: -1rem;
         width: 2.5rem;
         height: 2.5rem;
         background: var(--primary-color);
@@ -220,49 +208,66 @@ title: Getting Started
 <section class="features">
     <div class="getting-started-content">
         <h2>Virtual Smart Home (VSH)</h2>
-        <p>A Node-RED node that represents a virtual smart home device which can be controlled via Amazon Alexa. Requires the 'virtual smart home' skill to be enabled for your Amazon account.</p>
+        <p><strong>Do stuff in Node-RED with Amazon Alexa – no custom hardware, no separate accounts, no
+                hassle.</strong></p>
+        <p><strong>Virtual Smart Home (VSH)</strong> is a powerful Node-RED node that lets you create virtual smart home
+            devices directly on your flow canvas. These devices integrate natively with Amazon Alexa using the <a
+                href="https://www.amazon.com/dp/B08JV9RT7H">Virtual Smart Home skill</a>, allowing you to control and
+            automate your home like never before.</p>
 
         <img src="{{ '/assets/images/demo.png' | relative_url }}" alt="Examples" class="demo-image">
 
         <div class="highlights">
-            <h3>Highlights</h3>
+            <h3>✨ Why Choose VSH?</h3>
             <ul>
-                <li>supports a growing set of device types
-                    <ul>
-                        <li>Blinds</li>
-                        <li>Color Changing Light Bulb</li>
-                        <li>Contact Sensor</li>
-                        <li>Dimmable Light Bulb</li>
-                        <li>Dimmer Switch</li>
-                        <li>Doorbell Event Source</li>
-                        <li>Entertainment Device</li>
-                        <li>Fan</li>
-                        <li>Garage Door Opener (en-US locale only)</li>
-                        <li>Lock</li>
-                        <li>Motion Sensor</li>
-                        <li>Plug</li>
-                        <li>Scene</li>
-                        <li>Switch</li>
-                        <li>Temperature Sensor</li>
-                        <li>Thermostat (Single-setpoint)</li>
-                        <li>Thermostat (Dual-setpoint)</li>
-                    </ul>
+                <li>🧱 <strong>Drag & Drop Simplicity</strong><br>
+                    Add new virtual devices in Node-RED and they instantly appear in Alexa — no discovery phrase needed.
                 </li>
-                <li>no separate account needed. Just link your existing Amazon account.</li>
-                <li>new virtual devices can simply be dragged onto the Node-RED canvas and will proactively be discovered by Alexa. No need to ask Alexa to discover devices.</li>
-                <li>devices removed from the Node-RED canvas will also be removed from Alexa. Orphaned devices can also be manually removed from Alexa via the Node-RED editor.</li>
-                <li>changes made to virtual device types and names will immediately be picked up by Alexa.</li>
-                <li>local state changes of devices (e.g. thermostat values) get synchronized with Alexa</li>
-                <li>secure communication with the IoT cloud through individually provisioned certificates</li>
+                <li>❌ <strong>No Extra Accounts</strong><br>
+                    Just link your Amazon account. No extra sign-ups, no cloud dashboards to manage.</li>
+                <li>🔄 <strong>Live Sync with Alexa</strong><br>
+                    Rename or change device types, and Alexa reflects the changes in real time.</li>
+                <li>🔐 <strong>Secure by Design</strong><br>
+                    Communicates via individually provisioned certificates using a secure cloud connection.</li>
+                <li>🔁 <strong>Two-Way Sync</strong><br>
+                    Push updates from Node-RED to Alexa — perfect for keeping things in sync when local changes happen.
+                </li>
+                <li>🧹 <strong>Automatic Cleanup</strong><br>
+                    Remove devices from Node-RED and they're automatically removed from Alexa, too. Orphaned devices?
+                    Clean them up easily in the editor.</li>
             </ul>
         </div>
 
-        <h2>What it does</h2>
-        <p>This node is triggered by Amazon Alexa, either through a voice command or the Alexa app, resulting in the generation of a <code>msg</code> object that carries the updated device state as its payload. This msg can be harnessed to perform practical actions, such as controlling physical devices connected to Home Assistant. For instance, if you say, "Alexa, dim the kitchen light to 50 percent," the emitted <code>msg</code> object would be as follows:</p>
+        <h2>🚀 Supported Device Types</h2>
+        <p>VSH supports a growing range of Alexa-compatible devices:</p>
+        <ul>
+            <li>Blinds</li>
+            <li>Color Changing Light Bulb</li>
+            <li>Contact Sensor</li>
+            <li>Dimmable Light Bulb</li>
+            <li>Dimmer Switch</li>
+            <li>Doorbell Event Source</li>
+            <li>Entertainment Device</li>
+            <li>Fan</li>
+            <li>Garage Door Opener <em>(en-US only)</em></li>
+            <li>Lock</li>
+            <li>Motion Sensor</li>
+            <li>Plug</li>
+            <li>Scene</li>
+            <li>Switch</li>
+            <li>Temperature Sensor</li>
+            <li>Thermostat (Single- and Dual-Setpoint)</li>
+        </ul>
+
+        <h2>⚙️ How It Works</h2>
+        <p>VSH connects Alexa voice commands to your smart home flows in Node-RED.</p>
+        <p>For example, when you say:</p>
+        <blockquote>"Alexa, dim the kitchen light to 50 percent"</blockquote>
+        <p>The node emits a <code>msg</code> object like this:</p>
 
         <pre><code>{
   "topic": "home/kitchen/lights",
-  "metadata": { "foo": "bar"},
+  "metadata": { "foo": "bar" },
   "payload": {
     "brightness": 50,
     "powerState": "ON",
@@ -273,47 +278,91 @@ title: Getting Started
   }
 }</code></pre>
 
-        <p>The node also accepts inbound messages that can be used to inform Alexa about local device changes, which will then be reflected in the Alexa app. If the passthrough option is enabled, this will also trigger an outbound message, just like when the node gets invoked via Alexa. In this case <code>payload.source</code> is set to <code>device</code> instead of <code>alexa</code>. If the inbound message has a <code>topic</code> attribute, its value will be present in the outbound msg instead of the topic configured in the editor.</p>
+        <p>You can use this <code>msg</code> to control physical devices — for example, via MQTT or Home Assistant.</p>
+        <p>And it works both ways: Send a <code>msg</code> into the node to update Alexa with local state changes. If
+            passthrough is enabled, Alexa gets updated and an outbound message is sent too
+            (<code>payload.source = "device"</code>).</p>
 
-        <p>Please ensure that your setup does not send too many messages to Alexa. Otherwise you risk getting your account blocked.</p>
+        <h2>🧠 Ideal For</h2>
+        <ul>
+            <li>Home automation enthusiasts who want voice control without cloud lock-in</li>
+            <li>Developers building custom smart home flows</li>
+            <li>Anyone who uses Node-RED and Alexa together</li>
+        </ul>
 
-        <h2>Availability</h2>
-        <p>The virtual smart home skill is available in the <b>Amazon Alexa skill stores</b>     in the following locales:</p>
+        <h2>📦 Get Started</h2>
+        <p>Install from the Node-RED palette or via npm:</p>
+        <pre><code>npm install node-red-contrib-virtual-smart-home</code></pre>
+        <p>Then enable the <a href="https://www.amazon.com/dp/B08JV9RT7H">Virtual Smart Home Alexa Skill</a> and link
+            your account.</p>
+
+        <h2>🌍 Availability</h2>
+        <p>The <em>Virtual Smart Home</em> Alexa skill is available in the following regions:</p>
 
         <div class="availability">
-            <a href="https://www.amazon.com.au/dp/B08JV9RT7H">English (AU)</a>
-            <a href="https://www.amazon.ca/dp/B08JV9RT7H">English (CA)</a>
-            <a href="https://www.amazon.co.uk/dp/B08JV9RT7H">English (GB)</a>
-            <a href="https://www.amazon.in/dp/B08JV9RT7H">English (IN)</a>
-            <a href="https://www.amazon.com/dp/B08JV9RT7H">English (US)</a>
-            <a href="https://www.amazon.fr/dp/B08JV9RT7H">French (FR)</a>
-            <a href="https://www.amazon.de/dp/B08JV9RT7H">German (DE)</a>
-            <a href="https://www.amazon.it/dp/B08JV9RT7H">Italian (IT)</a>
-            <a href="https://www.amazon.com.br/dp/B08JV9RT7H">Portuguese (BR)</a>
-            <a href="https://www.amazon.es/dp/B08JV9RT7H">Spanish (ES)</a>
+            <a href="https://www.amazon.com/dp/B08JV9RT7H">🇺🇸 US</a>
+            <a href="https://www.amazon.co.uk/dp/B08JV9RT7H">🇬🇧 UK</a>
+            <a href="https://www.amazon.ca/dp/B08JV9RT7H">🇨🇦 Canada</a>
+            <a href="https://www.amazon.com.au/dp/B08JV9RT7H">🇦🇺 Australia</a>
+            <a href="https://www.amazon.in/dp/B08JV9RT7H">🇮🇳 India</a>
+            <a href="https://www.amazon.de/dp/B08JV9RT7H">🇩🇪 Germany</a>
+            <a href="https://www.amazon.fr/dp/B08JV9RT7H">🇫🇷 France</a>
+            <a href="https://www.amazon.it/dp/B08JV9RT7H">🇮🇹 Italy</a>
+            <a href="https://www.amazon.com.br/dp/B08JV9RT7H">🇧🇷 Brazil</a>
+            <a href="https://www.amazon.es/dp/B08JV9RT7H">🇪🇸 Spain</a>
         </div>
 
-        <h2>Setup Instructions</h2>
+        <h2>🚀 Setup Instructions</h2>
+        <p>Get up and running with Virtual Smart Home in just a few minutes.</p>
 
-        <h3>In the Alexa app</h3>
+        <h3>🔊 Step 1: Enable the Alexa Skill</h3>
         <ol class="setup-steps">
-            <li>Search the skill store for the <code>virtual smart home</code> skill and enable it.</li>
-            <li>Complete the account linking process by logging in with your Amazon account credentials.</li>
+            <li>Open the <strong>Alexa app</strong> on your phone or go to the <a
+                    href="https://www.amazon.com/dp/B08JV9RT7H">Alexa Skill Store</a>.</li>
+            <li>Search for the <strong>"Virtual Smart Home"</strong> skill.</li>
+            <li>Tap <strong>Enable</strong> and complete the account linking using your Amazon credentials.</li>
         </ol>
 
-        <h3>In Node-RED</h3>
+        <h3>🧱 Step 2: Set Up in Node-RED</h3>
         <ol class="setup-steps">
-            <li>Install the <code>node-red-contrib-virtual-smart-home</code> module.</li>
-            <li>Place a <code>virtual device</code> node onto the canvas and connect it to a debug node.</li>
-            <li>Double-click on the virtual device node to enter a name and select a device type. Once set up, you can use this name to control the device via Alexa.</li>
-            <li>Configure a new <code>vsh-connection</code> by clicking the pen icon. (Only needed <em>once</em> for each Amazon account).</li>
-            <li>Follow the instructions to complete the account linking process. Make sure you use the same Amazon account credentials as above.</li>
-            <li>Deploy your Node-RED flow. This will trigger your virtual device to be discovered by Alexa. You should even get a push notification via the Alexa app (if notifications are enabled).</li>
-            <li>You should now be able to control your virtual device with your voice, e.g., by saying "Alexa, turn xxx on". Inspect the output of the connected debug node and consult the docs to do something useful.</li>
-            <li>Once you remove virtual devices from the canvas (and redeploy your flows), those devices will also be removed from Alexa.</li>
+            <li><strong>Install the VSH Node</strong><br>
+                Add VSH to your Node-RED environment, either from the Node-RED palette or via npm:
+                <pre><code>npm install node-red-contrib-virtual-smart-home</code></pre>
+            </li>
+            <li><strong>Add a Virtual Device</strong><br>
+                - Drag a <code>virtual device</code> node onto your flow.<br>
+                - Connect it to a <code>debug</code> node to inspect the output.</li>
+            <li><strong>Configure the Device</strong><br>
+                - Double-click the virtual device node.<br>
+                - Enter a <strong>name</strong> (this will be the Alexa device name).<br>
+                - Choose a <strong>device type</strong> (e.g., dimmable light, switch, thermostat, etc.).</li>
+            <li><strong>Link Your Amazon Account</strong><br>
+                - Click the <strong>pen icon</strong> next to the <code>Connection</code> field.<br>
+                - This step is required <strong>once per Amazon account</strong>.<br>
+                - Use the <strong>same Amazon account</strong> you used to enable the skill.</li>
+            <li><strong>Deploy Your Flow</strong><br>
+                - Click <strong>Deploy</strong> in Node-RED.<br>
+                - Alexa will automatically discover your new virtual device.<br>
+                - If Alexa app notifications are enabled, you'll even get a push notification.</li>
+            <li><strong>Try It Out!</strong><br>
+                Say something like:<br>
+                <blockquote>"Alexa, turn on kitchen light"</blockquote>
+                - Check the output in the debug node to see what Alexa sent.<br>
+                - Use the output to control your real devices, trigger flows, or send MQTT messages.
+            </li>
+            <li><strong>Removing Devices</strong><br>
+                - Simply delete the virtual device node from your flow.<br>
+                - After redeploying, the corresponding Alexa device will be removed automatically.</li>
         </ol>
 
         <h2>Docs</h2>
         <p>Detailed docs are shipped as part of the Node-RED package and available through the 'help' panel.</p>
+
+        <h2>Examples</h2>
+        <p>Example flows that illustrate the payload structure and voice invocation phrases can be imported from the
+            Node-RED import menu (Import > Examples > node-red-contrib-virtual-smart-home). They can also be found in
+            the <a
+                href="https://github.com/csuermann/node-red-contrib-virtual-smart-home/tree/master/examples">examples</a>
+            folder.</p>
     </div>
-</section> 
+</section>

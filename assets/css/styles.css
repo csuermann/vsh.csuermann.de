@@ -60,6 +60,10 @@ nav {
     filter: brightness(0) invert(1);
 }
 
+.hero a {
+    color: white;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
